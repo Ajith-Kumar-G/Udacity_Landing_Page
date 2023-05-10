@@ -1,0 +1,150 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Manipulating the DOM</title>
+  <!-- Load Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Noto+Sans+Display&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">
+  <!-- Load Styles -->
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- HTML Follows BEM naming conventions 
+  IDs are only used for sections to connect menu achors to sections -->
+  <header class="page__header">
+    <nav class="navbar__menu">
+      <!-- Navigation starts as empty UL that will be populated with JS -->
+      <ul id="navbar__list"></ul>
+    </nav>
+  </header>
+  <main>
+    <header class="main__hero">
+      <div class="landing__container" id="section0">
+        <img id="main_img" src="./img/new_main.png" alt="main_image" />
+      </div>
+    </header>
+    <!-- Each Section has an ID (used for the anchor) and 
+    a data attribute that will populate the li node.
+    Adding more sections will automatically populate nav.
+    The first section is set to active class by default -->
+    <section id="section1" data-nav="Section 1" class="your-active-class">
+      <div class="landing__container">
+        <h2>Welcome to Snake Mania!</h2>
+        <div id="inner_text">
+          <p>
+            Are you ready to embark on a thrilling adventure through the world of classic gaming? Look no further than
+            Snake Mania, the ultimate destination for all snake game enthusiasts. Brace yourself for an
+            adrenaline-pumping experience as you dive into the captivating realm of this iconic game.
+          </p>
+          <p>Snake Mania takes you back to the golden era of gaming, where simplicity and addictive gameplay reigned
+            supreme. As a tribute to the legendary Snake game that captivated millions, we have reimagined this timeless
+            classic with modern twists and enhancements, delivering an unforgettable gaming encounter.
+            Featuring old school graphics and smooth controls, Snake Mania guarantees a seamless and immersive
+            experience.</p>
+          <p>Snake Mania is the ultimate destination for snake game aficionados. So, what are you waiting for? Join us
+            on this thrilling adventure, relive the glory days of gaming, and become a legend in the world of Snake
+            Mania!</p>
+        </div>
+      </div>
+    </section>
+    <section id="section2" data-nav="Section 2">
+      <div class="landing__container">
+        <h2>Rules</h2>
+        <div id="inner_text">
+          <p>
+            Objective: <br>
+            The objective of Snake Mania is to control the snake and guide it to eat as much food as possible while
+            avoiding collisions with the snake's own body or the game boundaries. The primary goal is to achieve the
+            highest score by growing the snake as long as possible.
+          <p>
+          <div id="snake_pixel"></div> -- Snake
+          <br>
+          <div id="food_pixel"></div> -- Food
+          <p>
+          Controls: <br>
+
+          Use the arrow keys (up, down, left, and right) or swipe gestures (on touch devices) to control the movement
+          of the snake.
+          The snake will continuously move in the direction specified until a new direction is chosen. </p>
+          <p>Gameplay:
+            <br>
+
+          <ul>
+            <p>
+              <li>When the game starts, the snake is placed in the center of the game area.</li>
+              <li>
+                Food items appear at random locations within the game boundaries. The snake must move over the food to
+                consume it and grow.</li>
+              <li>
+                Each time the snake consumes food, it increases in length by one cell.</li>
+              <li>
+                The score increases with each food item eaten.</li>
+              <li>
+                The game ends if any of the following conditions occur:<br>
+                <ul>
+                  <li>
+                    The snake collides with its own body, indicating a self-collision.</li>
+                  <li>
+                    The snake collides with the boundaries of the game area.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                After the game ends, the final score is displayed.</li>
+            </p>
+          </ul>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="section3" data-nav="Section 3">
+      <div class="landing__container">
+        <h2>Lets Go!</h2>
+        <div class="game_container">
+
+          <canvas id="gameCanvas" width="400" height="400"></canvas>
+          <div class="gameSettings">
+            <div class="score_display">Score:<div id="score_text">0</div>
+            </div>
+            <div id="game_over"></div>
+            <button class="restart_button-pushable" id="restart" role="button">
+              <span class="restart_button-shadow"></span>
+              <span class="restart_button-edge"></span>
+              <span class="restart_button-front text">
+                Restart
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section4" data-nav="Section 4">
+      <div class="landing__container">
+        <h2>Score Board</h2>
+        <div id="inner_text">
+          Check your progress here!
+          <ul id="score_list">
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="page__footer">
+    <p>&copy Snake Mania</p>
+  </footer>
+  <!-- Load JS -->
+  <script src="./js/app.js"></script>
+  <script src="./js/game.js"></script>
+</body>
+
+</html>
+
+<!-- HTML !-->

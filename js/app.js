@@ -42,12 +42,23 @@ function isElementInViewport (el) {
   );
 }
 
+let prevScrollpos = window.scrollY;
+function hideNav(){
+  let currentScrollPos = window.scrollY;
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector(".page__header").style.top = "0";
+  } else {
+
+    document.querySelector(".page__header").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
 document.addEventListener("DOMContentLoaded", () =>{
   scrollSection();
 }
 );
 
-document.addEventListener("scroll", toggleActive);
+document.addEventListener("scroll", ()=>{hideNav();toggleActive();});
 // Begin Main Functions
 
 

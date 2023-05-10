@@ -88,7 +88,7 @@ class Snakeclass {
         return false;
     }
     // To return the score
-    getScore(){
+    getScore() {
         return this.score;
     }
     // Function to stop the game
@@ -96,11 +96,11 @@ class Snakeclass {
         document.removeEventListener("keydown", handleKeydown);
         document.getElementById("game_over").innerText = "Game Over!"
         const new_score = document.createElement("li")
-        const parent_list =  document.getElementById("score_list");
-        if(parent_list.childElementCount > 10){
+        const parent_list = document.getElementById("score_list");
+        if (parent_list.childElementCount > 10) {
             parent_list.removeChild(parent_list.children[0])
         }
-        new_score.innerText = "Attempt-"+ (parent_list.childElementCount+1).toString() +"  ---- Score:  "+  this.score.toString();
+        new_score.innerText = "Attempt-" + (parent_list.childElementCount + 1).toString() + "  ---- Score:  " + this.score.toString();
         parent_list.appendChild(new_score);
         this.canvas_element.style.borderColor = "red";
         this.canvas_element.classList.toggle("addCrash");
@@ -159,15 +159,23 @@ function gameRun() {
 const score_change = new Event("score_change")
 let gameloop = setInterval(gameRun, 100);
 const score_element = document.getElementById("score_text");
-score_element.addEventListener("score_change",function(){
+score_element.addEventListener("score_change", function () {
     score_element.innerText = game.getScore();
 }
 );
 
 let score_list = [];
+
 // Event listener for keydown events
 document.addEventListener("keydown", handleKeydown);
 document.getElementById("restart").addEventListener("click", function () {
     document.addEventListener("keydown", handleKeydown);
     game.reset();
 })
+
+const keys = { "arrow_left":37,   "arrow_up" :38,  "arrow_right":39 , "arrow_down": 40 };
+for (const  [key, value] of Object.entries(keys)) {
+    document.getElementById(key).addEventListener("click", () => {
+        handleKeydown(new KeyboardEvent('keypress', { keyCode: value }));
+    });
+}

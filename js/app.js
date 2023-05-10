@@ -48,7 +48,7 @@ function hideNav(){
   if (prevScrollpos > currentScrollPos) {
     document.querySelector(".page__header").style.top = "0";
   } else {
-
+    document.querySelector(".navbar__menu").classList.remove("responsive");
     document.querySelector(".page__header").style.top = "-50px";
   }
   prevScrollpos = currentScrollPos;

@@ -330,6 +330,7 @@ section.your-active-class .landing__container::after {
 
 #gameCanvas {
     border: 5px solid black;
+    width: -webkit-fill-available;
 }
 
 #snake_pixel {

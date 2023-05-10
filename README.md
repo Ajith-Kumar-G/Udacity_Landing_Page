@@ -1,4 +1,4 @@
-# Landing Page Project
+# Landing Page Project [GameMania](https://ajith-kumar-g.github.io/Udacity_Landing_Page/)
 Welcome to Snake Mania!
 
 Are you ready to embark on a thrilling adventure through the world of classic gaming? Look no further than Snake Mania, the ultimate destination for all snake game enthusiasts. Brace yourself for an adrenaline-pumping experience as you dive into the captivating realm of this iconic game.
